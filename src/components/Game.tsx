@@ -1,14 +1,12 @@
-interface Players {
-    p1: string;
-    p2: string;
+interface GameProps {
+    mode: string;
 }
 
-export default ({ players }: { players: Players }) => {
+export default ({ mode }: GameProps) => {
     return (
-        <>
+        <div>
             <h1>Game</h1>
-            <h2>{players.p1}</h2>
-            <h2>{players.p2}</h2>
-        </>
+            <h2>Modo escolhido: {mode}</h2>
+        </div>
     );
 };

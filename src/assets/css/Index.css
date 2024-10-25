@@ -5,31 +5,13 @@
         sans-serif;
 }
 
-body,
-form {
+.center-itens {
     align-items: center;
     justify-content: center;
     display: flex;
     height: 100dvh;
     flex-direction: column;
-}
-
-form {
-    gap: 10px;
-}
-
-label {
-    font-weight: 400;
-}
-
-span {
-    font-weight: 200;
-}
-
-input {
-    border: 1px solid gray;
-    padding: 12px 32px;
-    border-radius: 6px;
+    gap: 6px;
 }
 
 button {
@@ -44,4 +26,12 @@ button {
 
 button:hover {
     background-color: darkred;
+}
+
+.bg-header {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: red;
+    color: white;
 }
