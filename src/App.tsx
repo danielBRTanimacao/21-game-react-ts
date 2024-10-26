@@ -1,33 +1,43 @@
-import { useState, MouseEvent } from "react";
-import Game from "./components/Game";
+import { useState } from "react";
 
 export default () => {
-    const [gameMode, setGameMode] = useState<string | null>(null);
+    const [init, setInit] = useState(false);
 
-    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-        const mode = e.currentTarget.value;
-        setGameMode(mode);
+    const [counts, setCounts] = useState({ player: 0, bot: 0 });
+
+    const getRandomCard = () => {
+        return Math.floor(Math.random() * (12 - 1 + 1) + 1);
     };
 
     return (
         <>
-            <main className="center-itens">
-                {!gameMode ? (
-                    <div>
-                        <h2 className="bg-header">Escolha</h2>
-                        <div>
-                            <button onClick={handleClick} value="2 Players">
-                                2 Players
-                            </button>
-                            <button onClick={handleClick} value="BOT">
-                                BOT
-                            </button>
-                        </div>
-                    </div>
-                ) : (
-                    <Game mode={gameMode} />
-                )}
-            </main>
+            {!init ? (
+                <main className="center-itens">
+                    <h2 className="bg-header">BlackJack game</h2>
+                    <button
+                        className="btn-header"
+                        onClick={() => setInit(true)}
+                    >
+                        Iniciar
+                    </button>
+                </main>
+            ) : (
+                <main className="center-itens">
+                    <p>{counts.bot}</p>
+                    <p>{counts.player}</p>
+                    <button
+                        onClick={() =>
+                            setCounts({
+                                player: getRandomCard() + counts.player,
+                                bot: counts.bot
+                            })
+                        }
+                    >
+                        take
+                    </button>
+                    <button>cancel</button>
+                </main>
+            )}
         </>
     );
 };

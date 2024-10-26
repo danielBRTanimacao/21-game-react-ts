@@ -14,24 +14,22 @@
     gap: 6px;
 }
 
-button {
+.bg-header {
+    padding: 10px;
+    background-color: rgb(25, 9, 9);
+    color: white;
+}
+
+.btn-header {
     color: white;
     cursor: pointer;
-    padding: 10px 28px;
+    padding: 10px 80px;
     background-color: red;
     border: none;
     border-radius: 6px;
     font-weight: 700;
 }
 
-button:hover {
+.btn-header:hover {
     background-color: darkred;
-}
-
-.bg-header {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    background-color: red;
-    color: white;
 }
