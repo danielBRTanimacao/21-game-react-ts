@@ -25,8 +25,19 @@ export default () => {
         }
     };
 
+    const botPlays = () => {
+        while (true) {
+            setPlayerPoints({
+                player: playerPoints.player,
+                bot: getRandomCard() + playerPoints.bot
+            });
+            break;
+        }
+    };
+
     const finishGame = () => {
         setDisabledGame(true);
+        botPlays();
         getWinner();
     };
 
@@ -61,9 +72,19 @@ export default () => {
                     ) : (
                         <button disabled>take</button>
                     )}
-                    <button className="dark-btn" onClick={finishGame}>
-                        finish
-                    </button>
+                    {!disabledGame ? (
+                        <>
+                            <button className="dark-btn" onClick={finishGame}>
+                                finish
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button className="dark-btn" disabled>
+                                finish
+                            </button>
+                        </>
+                    )}
                     <p>{winner}</p>
                 </main>
             )}
