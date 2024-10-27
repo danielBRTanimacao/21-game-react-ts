@@ -20,20 +20,7 @@
     color: white;
 }
 
-.btn-header {
-    color: white;
-    cursor: pointer;
-    padding: 10px 80px;
-    background-color: red;
-    border: none;
-    border-radius: 6px;
-    font-weight: 700;
-}
-
-.btn-header:hover {
-    background-color: darkred;
-}
-
+.btn-header,
 .game button,
 .dark-btn {
     color: white;
@@ -45,6 +32,19 @@
     font-weight: 700;
 }
 
+.btn-header:hover,
+.game button:hover {
+    background-color: darkred;
+}
+
+.game button:disabled {
+    background-color: rgb(48, 0, 0);
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .dark-btn {
     background-color: rgb(19, 3, 3) !important;
+}
+.dark-btn:hover {
+    background-color: rgb(2, 1, 1) !important;
 }
