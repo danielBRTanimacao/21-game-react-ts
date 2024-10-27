@@ -33,3 +33,18 @@
 .btn-header:hover {
     background-color: darkred;
 }
+
+.game button,
+.dark-btn {
+    color: white;
+    cursor: pointer;
+    padding: 10px 80px;
+    background-color: red;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.dark-btn {
+    background-color: rgb(19, 3, 3) !important;
+}
